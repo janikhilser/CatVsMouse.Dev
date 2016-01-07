@@ -25,7 +25,7 @@ namespace GameController
             Timer timer = new Timer(1000);
             timer.Elapsed += Timer_Elapsed;
             timer.Start();
-
+            //test
             //for (int i = 0; i < 20; i++)
             //{
             //    for (int x = 0; x < 20; x++)

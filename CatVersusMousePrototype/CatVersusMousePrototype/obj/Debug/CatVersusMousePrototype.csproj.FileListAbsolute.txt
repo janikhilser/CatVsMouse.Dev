@@ -22,3 +22,6 @@ C:\Users\Janik\Documents\Visual Studio 2015\Projects\CatVersusMousePrototype\Cat
 C:\Users\Janik\Documents\Visual Studio 2015\Projects\CatVersusMousePrototype\CatVersusMousePrototype\bin\Debug\System.Windows.Interactivity.dll
 C:\Users\Janik\Documents\Visual Studio 2015\Projects\CatVersusMousePrototype\CatVersusMousePrototype\bin\Debug\Microsoft.Expression.Interactions.xml
 C:\Users\Janik\Documents\Visual Studio 2015\Projects\CatVersusMousePrototype\CatVersusMousePrototype\bin\Debug\System.Windows.Interactivity.xml
+C:\Users\Janik\Source\Repos\CatVsMouse.Dev\CatVersusMousePrototype\CatVersusMousePrototype\bin\Debug\CatVersusMousePrototype.exe.config
+C:\Users\Janik\Source\Repos\CatVsMouse.Dev\CatVersusMousePrototype\CatVersusMousePrototype\obj\Debug\CatVersusMousePrototype.exe
+C:\Users\Janik\Source\Repos\CatVsMouse.Dev\CatVersusMousePrototype\CatVersusMousePrototype\obj\Debug\CatVersusMousePrototype.pdb

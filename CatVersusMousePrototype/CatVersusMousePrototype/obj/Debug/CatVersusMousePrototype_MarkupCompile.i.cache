@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\Janik\Documents\Visual Studio 2015\Projects\CatVersusMousePrototype\CatVersusMousePrototype\obj\Debug\
+C:\Users\Janik\Source\Repos\CatVsMouse.Dev\CatVersusMousePrototype\CatVersusMousePrototype\obj\Debug\
 CatVersusMousePrototype
 none
 false
 DEBUG;TRACE
-C:\Users\Janik\Documents\Visual Studio 2015\Projects\CatVersusMousePrototype\CatVersusMousePrototype\App.xaml
+C:\Users\Janik\Source\Repos\CatVsMouse.Dev\CatVersusMousePrototype\CatVersusMousePrototype\App.xaml
 31995097441
 
 24-1203754158
-1775155294
+17-1456480618
 Views\GameView.xaml;Views\MainWindow.xaml;Views\StartView.xaml;
 
 True
