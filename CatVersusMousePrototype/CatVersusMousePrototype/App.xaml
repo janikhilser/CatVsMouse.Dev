@@ -1,0 +1,14 @@
+﻿<Application x:Class="CatVersusMousePrototype.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:CatVersusMousePrototype"
+             StartupUri="Views/MainWindow.xaml">
+    <Application.Resources>
+         <ResourceDictionary>
+             <ResourceDictionary.MergedDictionaries>
+                 <ResourceDictionary Source="Views/StartView.xaml"></ResourceDictionary>
+                 <ResourceDictionary Source="Views/GameView.xaml"></ResourceDictionary>
+             </ResourceDictionary.MergedDictionaries>
+         </ResourceDictionary>
+    </Application.Resources>
+</Application>

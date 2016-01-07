@@ -1,0 +1,5 @@
+C:\Users\Janik\Documents\Visual Studio 2015\Projects\CatVersusMousePrototype\GameController\bin\Debug\GameController.dll
+C:\Users\Janik\Documents\Visual Studio 2015\Projects\CatVersusMousePrototype\GameController\bin\Debug\GameController.pdb
+C:\Users\Janik\Documents\Visual Studio 2015\Projects\CatVersusMousePrototype\GameController\obj\Debug\GameController.csprojResolveAssemblyReference.cache
+C:\Users\Janik\Documents\Visual Studio 2015\Projects\CatVersusMousePrototype\GameController\obj\Debug\GameController.dll
+C:\Users\Janik\Documents\Visual Studio 2015\Projects\CatVersusMousePrototype\GameController\obj\Debug\GameController.pdb

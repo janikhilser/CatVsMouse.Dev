@@ -1,0 +1,17 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:interfaces="clr-namespace:CatVersusMousePrototype.ViewModels.Interfaces">
+
+    <DataTemplate x:Key="StartView" DataType="{x:Type interfaces:IStartViewModel}">
+        <Grid Background="Orange">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <StackPanel Background="OrangeRed">
+                <Button Command="{Binding StartGameCommand}" Content="{Binding StartGameText}" Margin="10"></Button>
+            </StackPanel>
+        </Grid>
+    </DataTemplate>
+
+</ResourceDictionary>

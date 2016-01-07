@@ -1,0 +1,18 @@
+﻿<Window x:Class="CatVersusMousePrototype.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:views="clr-namespace:CatVersusMousePrototype.Views"
+        xmlns:ui="clr-namespace:CatVersusMousePrototype.Framework.UI"
+        xmlns:interfaces="clr-namespace:CatVersusMousePrototype.ViewModels.Interfaces"
+        mc:Ignorable="d"
+        Title="Cat vs. Mouse" Height="350" Width="525" >
+    <Window.Resources>
+        <views:ContentTemplateSelector x:Key="ContentTemplateSelector" StartView="{StaticResource StartView}" GameView="{StaticResource GameView}"></views:ContentTemplateSelector>
+    </Window.Resources>
+    <Window.DataContext>
+        <ui:ViewModelHandler></ui:ViewModelHandler>
+    </Window.DataContext>
+    <ContentControl Content="{Binding SelectedViewModel}" ContentTemplateSelector="{StaticResource ContentTemplateSelector}" />
+</Window>
