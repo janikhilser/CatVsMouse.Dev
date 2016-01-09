@@ -3,7 +3,7 @@
                     xmlns:interfaces="clr-namespace:CatVersusMousePrototype.ViewModels.Interfaces">
 
     <DataTemplate x:Key="StartView" DataType="{x:Type interfaces:IStartViewModel}">
-        <Grid Background="Orange">
+        <Grid Background="DeepSkyBlue">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="100"></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
