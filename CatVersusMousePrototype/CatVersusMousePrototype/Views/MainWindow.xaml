@@ -11,8 +11,14 @@
     <Window.Resources>
         <views:ContentTemplateSelector x:Key="ContentTemplateSelector" StartView="{StaticResource StartView}" GameView="{StaticResource GameView}"></views:ContentTemplateSelector>
     </Window.Resources>
+    <Window.InputBindings>
+        <KeyBinding Key="Right" Command="{Binding KeyDownCommand}" CommandParameter="{x:Static Key.Right}"></KeyBinding>
+        <KeyBinding Key="Left" Command="{Binding KeyDownCommand}" CommandParameter="{x:Static Key.Left}"></KeyBinding>
+        <KeyBinding Key="Down" Command="{Binding KeyDownCommand}" CommandParameter="{x:Static Key.Down}" ></KeyBinding>
+        <KeyBinding Key="Up" Command="{Binding KeyDownCommand}" CommandParameter="{x:Static Key.Up}"></KeyBinding>
+    </Window.InputBindings>
     <Window.DataContext>
         <ui:ViewModelHandler></ui:ViewModelHandler>
     </Window.DataContext>
-    <ContentControl Content="{Binding SelectedViewModel}" ContentTemplateSelector="{StaticResource ContentTemplateSelector}" />
+    <ContentControl Content="{Binding SelectedViewModel}"  ContentTemplateSelector="{StaticResource ContentTemplateSelector}" />
 </Window>

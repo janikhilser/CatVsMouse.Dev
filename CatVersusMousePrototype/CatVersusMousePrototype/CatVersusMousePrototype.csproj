@@ -76,7 +76,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Framework.UI\ActionCommand.cs" />
     <Compile Include="Framework.UI\RelayCommand.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Framework.UI\IViewModelHandler.cs" />

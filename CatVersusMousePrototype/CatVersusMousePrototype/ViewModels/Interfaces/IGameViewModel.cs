@@ -13,5 +13,6 @@ namespace CatVersusMousePrototype.ViewModels.Interfaces
         int FieldWidth { get; set; }
         IField[,] Fields { get; set; }
 
+        void HandleKeyDownCommand(object parameter);
     }
 }
