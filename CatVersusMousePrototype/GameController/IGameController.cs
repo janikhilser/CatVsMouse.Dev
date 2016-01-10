@@ -1,15 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GameController
 {
     public interface IGameController
     {
         IField[,] Fields { get; set; }
+        
+        Point MousePosition { get; set; }
+        Direction MouseDirection { get; set; }
+
         Action<string> OnPropertyChanged { get; set; }
+
+    }
+
+    public enum Direction
+    {
+        Left,
+        Right,
+        Up,
+        Down
     }
 }

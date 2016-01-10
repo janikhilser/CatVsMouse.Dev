@@ -15,6 +15,7 @@ namespace CatVersusMousePrototype.ViewModels.Implementation
         private ICommand _backToMainMenuCommand;
         private int _fieldHeight;
         private int _fieldWidth;
+        private Direction _direction;
         public IGameController GameController { get; set; }
 
         public GameViewModel(ViewModelMetadata viewModelMetadata) : base(viewModelMetadata)
@@ -75,18 +76,39 @@ namespace CatVersusMousePrototype.ViewModels.Implementation
             set { _fields = value; OnPropertyChanged(); }
         }
 
-        public void HandleKeyDownCommand(object parameter)
+        #region KeyDown methods and members
+        //KeyDown Methods and Members
+        private void HandleKeyDownCommand(object parameter)
         {
             var keyType = (Key)parameter;
             switch (keyType)
             {
                 case Key.Right:
-                    OnChangeViewModel(typeof(StartViewModel));
+                    Direction = Direction.Right;
                     break;
                 case Key.Left:
-                    GameController.Fields = null;
+                    Direction = Direction.Left;
+                    break;
+                case Key.Up:
+                    Direction = Direction.Up;
+                    break;
+                case Key.Down:
+                    Direction = Direction.Down;
                     break;
             }
         }
+
+        private Direction Direction
+        {
+            get { return _direction; }
+            set
+            {
+                if (value != _direction)
+                    GameController.MouseDirection = value;
+                _direction = value;
+            }
+        }
+
+        #endregion KeyDown methods and members
     }
 }

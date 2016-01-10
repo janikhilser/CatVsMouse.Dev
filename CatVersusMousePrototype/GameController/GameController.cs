@@ -1,51 +1,45 @@
 ﻿using System;
-using System.CodeDom;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
 using System.Timers;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Media;
+
 
 namespace GameController
 {
     public class GameController : IGameController
     {
         private IField[,] _fields;
+        private Point _mousePosition;
 
         public GameController(IField[,] fields, Action<string> onPropertyChanged)
         {
             OnPropertyChanged = onPropertyChanged;
             Fields = fields;
-            Fields[2, 2].Background = Brushes.Black;
-            Fields[3, 3].Background = Brushes.Red;
-            Timer timer = new Timer(1000);
-            timer.Elapsed += Timer_Elapsed;
-            timer.Start();
-            //test
-            //for (int i = 0; i < 20; i++)
-            //{
-            //    for (int x = 0; x < 20; x++)
-            //    {
-            //        Fields[i, x] = new Field()
-            //        {
-            //            FieldType = (FieldType) random.Next(0, 3),
-            //            Height = 10,
-            //            Width = 10
-            //        };
-            //    }
-            //}
 
+
+            MouseDirection = Direction.Right;
+            MousePosition = new Point(1, 1);
+            Timer moveMouseTimer = new Timer(300);
+            moveMouseTimer.Elapsed += OnMoveMouse;
+            moveMouseTimer.Start();
         }
 
-        private void Timer_Elapsed(object sender, ElapsedEventArgs e)
+        private void OnMoveMouse(object sender, ElapsedEventArgs e)
         {
-            Random random = new Random();
-            Fields[random.Next(19), random.Next(19)].Background = Brushes.Red;
-            //Fields[4, 4].Background = Brushes.Red;
+            switch (MouseDirection)
+            {
+                case Direction.Right:
+                    MousePosition = new Point(MousePosition.X + 1, MousePosition.Y);
+                    break;
+                case Direction.Left:
+                    MousePosition = new Point(MousePosition.X - 1, MousePosition.Y );
+                    break;
+                case Direction.Down:
+                    MousePosition = new Point(MousePosition.X, MousePosition.Y + 1);
+                    break;
+                case Direction.Up:
+                    MousePosition = new Point(MousePosition.X, MousePosition.Y - 1);
+                    break;
+            }
         }
 
         public IField[,] Fields
@@ -57,6 +51,29 @@ namespace GameController
                 OnPropertyChanged("Fields");
             }
         }
+
+        #region MousePosition and change methods
+        public Point MousePosition
+        {
+            get { return _mousePosition; }
+            set
+            {
+                ResetAndSetPosition(_mousePosition, value);
+                _mousePosition = value;
+            }
+        }
+
+        public Direction MouseDirection { get; set; }
+
+        private void ResetAndSetPosition(Point oldPosition, Point newPosition)
+        {
+            if (oldPosition != null)
+                Fields[oldPosition.Y, oldPosition.X].Background = Brushes.OrangeRed;
+            Fields[newPosition.Y, newPosition.X].Background = Brushes.Black;
+
+        }
+
+        #endregion MousePosition and change methods
 
         public Action<string> OnPropertyChanged { get; set; }
     }

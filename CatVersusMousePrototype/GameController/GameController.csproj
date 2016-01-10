@@ -46,6 +46,7 @@
     <Compile Include="GameController.cs" />
     <Compile Include="IField.cs" />
     <Compile Include="IGameController.cs" />
+    <Compile Include="Point.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

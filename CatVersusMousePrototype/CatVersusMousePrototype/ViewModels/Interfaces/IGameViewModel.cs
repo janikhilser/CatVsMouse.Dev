@@ -8,11 +8,11 @@ namespace CatVersusMousePrototype.ViewModels.Interfaces
 {
     public interface IGameViewModel : IViewModelBase
     {
-        ICommand BackToMainMenuCommand { get; set; }
         int FieldHeight { get; set; }
         int FieldWidth { get; set; }
         IField[,] Fields { get; set; }
-
-        void HandleKeyDownCommand(object parameter);
+        
+        //Commands
+        ICommand BackToMainMenuCommand { get; set; }
     }
 }
