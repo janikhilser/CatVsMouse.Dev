@@ -1,13 +1,12 @@
 ﻿using System;
+using GameController.Models;
 
 namespace GameController
 {
     public interface IGameController
     {
-        IField[,] Fields { get; set; }
-        
-        Point MousePosition { get; set; }
-        Direction MouseDirection { get; set; }
+        IGameModel GameModel { get; set; }
+       
 
         Action<string> OnPropertyChanged { get; set; }
 

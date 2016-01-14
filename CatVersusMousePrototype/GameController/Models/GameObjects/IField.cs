@@ -1,17 +1,14 @@
-﻿using System.ComponentModel;
-using System.Windows.Media;
+﻿using System.Windows.Media;
 
-namespace GameController
+namespace GameController.Models.GameObjects
 {
 
-    public interface IField : INotifyPropertyChanged
+    public interface IField : IGameObject
     {
         FieldType FieldType { get; set; }
         int Height { get; set; }
         int Width { get; set; }
         Brush Background { get; set; }
-        int X { get; set; }
-        int Y { get; set; }
     }
 
     public enum FieldType

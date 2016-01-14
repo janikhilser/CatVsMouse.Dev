@@ -3,14 +3,15 @@ using System.Windows.Input;
 using System.Windows.Media;
 using CatVersusMousePrototype.Framework.UI;
 using GameController;
+using GameController.Models;
+using GameController.Models.GameObjects;
 
 namespace CatVersusMousePrototype.ViewModels.Interfaces
 {
     public interface IGameViewModel : IViewModelBase
     {
-        int FieldHeight { get; set; }
-        int FieldWidth { get; set; }
-        IField[,] Fields { get; set; }
+        IGameModel GameModel { get; set; }
+        
         
         //Commands
         ICommand BackToMainMenuCommand { get; set; }

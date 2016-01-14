@@ -16,12 +16,12 @@
                 <Button></Button>
             </StackPanel>
             <Viewbox Grid.Column="1">
-                <Grid Height="{Binding FieldHeight}" Width="{Binding FieldWidth}" Background="Yellow">
+                <Grid Height="{Binding GameModel.FieldHeight}" Width="{Binding GameModel.FieldWidth}" Background="Yellow">
                     <Grid.Resources>
                         <local:ArrayConverter x:Key="ArrayConverter"/>
                     </Grid.Resources>
 
-                    <ItemsControl ItemsSource="{Binding Fields, Mode=OneWay, Converter={StaticResource ArrayConverter}}">
+                    <ItemsControl ItemsSource="{Binding GameModel.Fields, Mode=OneWay, Converter={StaticResource ArrayConverter}}">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
                                 <ItemsControl ItemsSource="{Binding ., Mode=OneWay}">
