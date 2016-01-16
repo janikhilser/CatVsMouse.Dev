@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Data;
 using GameController;
 using GameController.Models.GameObjects;
+using GameController.Models.GameObjects.Interfaces;
 
 namespace CatVersusMousePrototype.Views
 {

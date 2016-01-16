@@ -15,8 +15,6 @@ namespace CatVersusMousePrototype.ViewModels.Implementation
     {
         private IGameModel _gameModel;
         private ICommand _backToMainMenuCommand;
-        private int _fieldHeight;
-        private int _fieldWidth;
         private Direction _direction;
         public IGameController GameController { get; set; }
 
@@ -27,8 +25,8 @@ namespace CatVersusMousePrototype.ViewModels.Implementation
 
             GameModel = new GameModel();
 
-            
-            GameController = new GameController.GameController(GameModel, OnPropertyChanged);
+
+            GameController = new GameController.GameController(GameModel);
         }
 
         public ICommand BackToMainMenuCommand
@@ -70,8 +68,7 @@ namespace CatVersusMousePrototype.ViewModels.Implementation
             get { return _direction; }
             set
             {
-                if (value != _direction)
-                    GameController.GameModel.Mouse.Direction = value;
+                GameController.GameModel.Mouse.Direction = value;
                 _direction = value;
             }
         }

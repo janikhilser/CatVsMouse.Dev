@@ -9,6 +9,7 @@ namespace CatVersusMousePrototype.Framework.UI
         {
             ChangeViewModel = changeViewModel;
         }
+
         public Action<Type> ChangeViewModel { get; set; }
     }
 }

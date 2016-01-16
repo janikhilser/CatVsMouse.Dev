@@ -1,7 +1,8 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using GameController.Models.GameObjects.Interfaces;
 
-namespace GameController.Models.GameObjects
+namespace GameController.Models.GameObjects.Implementations
 {
     public abstract class GameObject : IGameObject
     {
@@ -9,8 +10,6 @@ namespace GameController.Models.GameObjects
 
         public abstract int X { get; set; }
         public abstract int Y { get; set; }
-        public abstract ObjectTypeEnum ObjectType { get; set; }
-
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {

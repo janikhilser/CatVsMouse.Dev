@@ -1,7 +1,7 @@
-﻿using System.ComponentModel;
-using System.Windows.Media;
+﻿using System.Windows.Media;
+using GameController.Models.GameObjects.Interfaces;
 
-namespace GameController.Models.GameObjects
+namespace GameController.Models.GameObjects.Implementations
 {
     public class Field : GameObject, IField
     {
@@ -15,10 +15,8 @@ namespace GameController.Models.GameObjects
             get { return _background; }
             set { _background = value; OnPropertyChanged(); }
         }
-
-
         public override int X { get; set; }
         public override int Y { get; set; }
-        public override ObjectTypeEnum ObjectType { get; set; }
+        
     }
 }
