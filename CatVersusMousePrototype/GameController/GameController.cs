@@ -57,75 +57,37 @@ namespace GameController
 
         private void OnMoveMouse(object sender, ElapsedEventArgs e)
         {
-            MoveMouse();
-        }
-
-        private void MoveMouse()
-        {
             switch (GameModel.Mouse.Direction)
             {
                 case Direction.Right:
-                    if (GameModel.Mouse != null)
-                        GameModel.Fields[GameModel.Mouse.Y, GameModel.Mouse.X].Background = Brushes.OrangeRed;
-
-
-                    GameModel.Mouse.X = GameModel.Mouse.X + 1;
-                    GameModel.Mouse.Y = GameModel.Mouse.Y;
-
-                    if (GameModel.Fields[GameModel.Mouse.Y, GameModel.Mouse.X].FieldType == FieldType.Wall)
-                        GameModel.Fields[GameModel.Mouse.Y, GameModel.Mouse.X].Background = Brushes.DeepPink;
-                    else
-                        GameModel.Fields[GameModel.Mouse.Y, GameModel.Mouse.X].Background = Brushes.Black;
-
+                    MoveMouse(0, +1);
                     break;
                 case Direction.Left:
-                    if (GameModel.Mouse != null)
-                        GameModel.Fields[GameModel.Mouse.Y, GameModel.Mouse.X].Background = Brushes.OrangeRed;
-
-                    GameModel.Mouse.X = GameModel.Mouse.X - 1;
-                    GameModel.Mouse.Y = GameModel.Mouse.Y;
-
-                    if (GameModel.Fields[GameModel.Mouse.Y, GameModel.Mouse.X].FieldType == FieldType.Wall)
-                        GameModel.Fields[GameModel.Mouse.Y, GameModel.Mouse.X].Background = Brushes.DeepPink;
-                    else
-                        GameModel.Fields[GameModel.Mouse.Y, GameModel.Mouse.X].Background = Brushes.Black;
+                    MoveMouse(0, -1);
                     break;
                 case Direction.Down:
-                    if (GameModel.Mouse != null)
-                        GameModel.Fields[GameModel.Mouse.Y, GameModel.Mouse.X].Background = Brushes.OrangeRed;
-
-                    GameModel.Mouse.X = GameModel.Mouse.X;
-                    GameModel.Mouse.Y = GameModel.Mouse.Y + 1;
-
-                    if (GameModel.Fields[GameModel.Mouse.Y, GameModel.Mouse.X].FieldType == FieldType.Wall)
-                        GameModel.Fields[GameModel.Mouse.Y, GameModel.Mouse.X].Background = Brushes.DeepPink;
-                    else
-                        GameModel.Fields[GameModel.Mouse.Y, GameModel.Mouse.X].Background = Brushes.Black;
+                    MoveMouse(1, 0);
                     break;
                 case Direction.Up:
-                    if (GameModel.Mouse != null)
-                        GameModel.Fields[GameModel.Mouse.Y, GameModel.Mouse.X].Background = Brushes.OrangeRed;
-
-                    GameModel.Mouse.X = GameModel.Mouse.X;
-                    GameModel.Mouse.Y = GameModel.Mouse.Y - 1;
-
-                    if (GameModel.Fields[GameModel.Mouse.Y, GameModel.Mouse.X].FieldType == FieldType.Wall)
-                        GameModel.Fields[GameModel.Mouse.Y, GameModel.Mouse.X].Background = Brushes.DeepPink;
-                    else
-                        GameModel.Fields[GameModel.Mouse.Y, GameModel.Mouse.X].Background = Brushes.Black;
+                    MoveMouse(-1, 0);
                     break;
             }
         }
 
-        //public IField[,] Fields
-        //{
-        //    get { return _fields; }
-        //    set
-        //    {
-        //        _fields = value;
-        //        OnPropertyChanged("Fields");
-        //    }
-        //}
+        public void MoveMouse(int y, int x)
+        {
+            if (GameModel.Mouse != null)
+                GameModel.Fields[GameModel.Mouse.Y, GameModel.Mouse.X].Background = Brushes.OrangeRed;
+
+
+            GameModel.Mouse.X = GameModel.Mouse.X + x;
+            GameModel.Mouse.Y = GameModel.Mouse.Y + y;
+
+            if (GameModel.Fields[GameModel.Mouse.Y, GameModel.Mouse.X].FieldType == FieldType.Wall)
+                GameModel.Fields[GameModel.Mouse.Y, GameModel.Mouse.X].Background = Brushes.DeepPink;
+            else
+                GameModel.Fields[GameModel.Mouse.Y, GameModel.Mouse.X].Background = Brushes.Black;
+        }
 
         public IGameModel GameModel { get; set; }
 
