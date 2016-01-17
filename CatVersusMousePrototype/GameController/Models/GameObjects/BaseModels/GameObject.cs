@@ -2,7 +2,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using GameController.Models.GameObjects.Interfaces;
 
-namespace GameController.Models.GameObjects.Implementations
+namespace GameController.Models.GameObjects.BaseModels
 {
     public abstract class GameObject : IGameObject
     {

@@ -43,22 +43,26 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\GameModelInitModel.cs" />
+    <Compile Include="Models\GameObjects\BaseModels\Enemy.cs" />
     <Compile Include="Models\GameObjects\Implementations\Field.cs" />
     <Compile Include="GameController.cs" />
     <Compile Include="Models\GameModel.cs" />
-    <Compile Include="Models\GameObjects\Implementations\GameObject.cs" />
+    <Compile Include="Models\GameObjects\BaseModels\GameObject.cs" />
     <Compile Include="IGameController.cs" />
     <Compile Include="Models\GameObjects\Implementations\TestEnemy.cs" />
     <Compile Include="Models\GameObjects\Interfaces\IField.cs" />
-    <Compile Include="Models\GameObjects\Interfaces\IGameObject.cs" />
+    <Compile Include="Models\GameObjects\BaseModels\IGameObject.cs" />
     <Compile Include="Models\GameObjects\Interfaces\IMouse.cs" />
-    <Compile Include="Models\GameObjects\Interfaces\IMoveableGameObject.cs" />
-    <Compile Include="Models\GameObjects\Interfaces\ITestEnemy.cs" />
-    <Compile Include="Models\GameObjects\Interfaces\MoveableGameObject.cs" />
+    <Compile Include="Models\GameObjects\BaseModels\IMoveableGameObject.cs" />
+    <Compile Include="Models\GameObjects\BaseModels\IEnemy.cs" />
+    <Compile Include="Models\GameObjects\BaseModels\MoveableGameObject.cs" />
     <Compile Include="Models\IGameModel.cs" />
     <Compile Include="Models\GameObjects\Implementations\Mouse.cs" />
     <Compile Include="Models\ObjectTypeEnum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Models\GameObjects\CatVsMouse.ncp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

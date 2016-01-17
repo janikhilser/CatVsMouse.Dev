@@ -1,0 +1,177 @@
+<Project>
+  <Name>CatVsMouse</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>GameController.dll</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Interface">
+        <Name>IField</Name>
+        <Access>Public</Access>
+        <Location left="632" top="545" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">FieldType FieldType { get; set; }</Member>
+        <Member type="Property">Int32 Height { get; set; }</Member>
+        <Member type="Property">Int32 Width { get; set; }</Member>
+        <Member type="Property">Brush Background { get; set; }</Member>
+      </Entity>
+      <Entity type="Interface">
+        <Name>IMouse</Name>
+        <Access>Public</Access>
+        <Location left="1355" top="978" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">Brush Color { get; set; }</Member>
+      </Entity>
+      <Entity type="Interface">
+        <Name>IGameObject</Name>
+        <Access>Public</Access>
+        <Location left="857" top="10" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">Int32 X { get; set; }</Member>
+        <Member type="Property">Int32 Y { get; set; }</Member>
+      </Entity>
+      <Entity type="Interface">
+        <Name>IMoveableGameObject</Name>
+        <Access>Public</Access>
+        <Location left="1128" top="545" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">ObjectTypeEnum ObjectType { get; set; }</Member>
+        <Member type="Property">IGameModel GameModel { get; set; }</Member>
+        <Member type="Property">Direction Direction { get; set; }</Member>
+        <Member type="Method">Void Move(Object sender, ElapsedEventArgs e)</Member>
+      </Entity>
+      <Entity type="Interface">
+        <Name>IEnemy</Name>
+        <Access>Public</Access>
+        <Location left="894" top="978" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">Direction GetDirection()</Member>
+      </Entity>
+      <Entity type="Class">
+        <Name>Field</Name>
+        <Access>Public</Access>
+        <Location left="632" top="822" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Brush _background</Member>
+        <Member type="Property">public FieldType FieldType { get; set; }</Member>
+        <Member type="Property">public Int32 Height { get; set; }</Member>
+        <Member type="Property">public Int32 Width { get; set; }</Member>
+        <Member type="Property">public Brush Background { get; set; }</Member>
+        <Member type="Property">public override Int32 X { get; set; }</Member>
+        <Member type="Property">public override Int32 Y { get; set; }</Member>
+        <Member type="Constructor">public Field()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TestEnemy</Name>
+        <Access>Public</Access>
+        <Location left="925" top="1702" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public override Int32 X { get; set; }</Member>
+        <Member type="Property">public override Int32 Y { get; set; }</Member>
+        <Member type="Property">public override ObjectTypeEnum ObjectType { get; set; }</Member>
+        <Member type="Constructor">public TestEnemy(IGameModel gameModel, Int32 x = 1, Int32 y = 1, Direction direction = 1)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Mouse</Name>
+        <Access>Public</Access>
+        <Location left="1355" top="1261" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public override ObjectTypeEnum ObjectType { get; set; }</Member>
+        <Member type="Property">public Brush Color { get; set; }</Member>
+        <Member type="Property">public override Int32 X { get; set; }</Member>
+        <Member type="Property">public override Int32 Y { get; set; }</Member>
+        <Member type="Constructor">public Mouse(IGameModel gameModel, Int32 x = 1, Int32 y = 1, Direction direction = 1)</Member>
+        <Modifier>Sealed</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Enemy</Name>
+        <Access>Public</Access>
+        <Location left="894" top="1261" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public new Direction Direction { get; set; }</Member>
+        <Member type="Constructor">protected Enemy(IGameModel gameModel, Direction direction)</Member>
+        <Member type="Method">public Direction GetDirection()</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>GameObject</Name>
+        <Access>Public</Access>
+        <Location left="857" top="263" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public abstract Int32 X { get; set; }</Member>
+        <Member type="Property">public abstract Int32 Y { get; set; }</Member>
+        <Member type="Event">public event PropertyChangedEventHandler PropertyChanged</Member>
+        <Member type="Constructor">protected GameObject()</Member>
+        <Member type="Method">protected virtual Void OnPropertyChanged(String propertyName)</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MoveableGameObject</Name>
+        <Access>Public</Access>
+        <Location left="1128" top="822" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public abstract ObjectTypeEnum ObjectType { get; set; }</Member>
+        <Member type="Property">public IGameModel GameModel { get; set; }</Member>
+        <Member type="Property">public Direction Direction { get; set; }</Member>
+        <Member type="Constructor">protected MoveableGameObject(IGameModel gameModel, Direction direction)</Member>
+        <Member type="Method">public Void Move(Object sender, ElapsedEventArgs e)</Member>
+        <Member type="Method">private Void OnMove(Int32 y, Int32 x)</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Generalization" first="5" second="9">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>819</X>
+          <Y>929</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>938</X>
+          <Y>712</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Generalization" first="6" second="8">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="7" second="10">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>1208</X>
+          <Y>1069</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Generalization" first="8" second="10">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>1209</X>
+          <Y>1098</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Generalization" first="10" second="9">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>938</X>
+          <Y>551</Y>
+        </BendPoint>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+</Project>

@@ -3,7 +3,7 @@
 namespace GameController.Models.GameObjects.Interfaces
 {
 
-    public interface IField : IGameObject
+    public interface IField
     {
         FieldType FieldType { get; set; }
         int Height { get; set; }

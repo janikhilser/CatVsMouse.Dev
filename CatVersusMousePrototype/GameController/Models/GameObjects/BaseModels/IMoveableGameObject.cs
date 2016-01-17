@@ -1,9 +1,9 @@
 ﻿using System.Timers;
-using Microsoft.Win32;
+using GameController.Models.GameObjects.Interfaces;
 
-namespace GameController.Models.GameObjects.Interfaces
+namespace GameController.Models.GameObjects.BaseModels
 {
-    public interface IMoveableGameObject : IGameObject
+    public interface IMoveableGameObject
     {
         ObjectTypeEnum ObjectType { get; set; }
 

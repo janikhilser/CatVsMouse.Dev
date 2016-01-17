@@ -1,8 +1,9 @@
-﻿using GameController.Models.GameObjects.Interfaces;
+﻿using GameController.Models.GameObjects.BaseModels;
+using GameController.Models.GameObjects.Interfaces;
 
 namespace GameController.Models.GameObjects.Implementations
 {
-    public class TestEnemy: MoveableGameObject, ITestEnemy
+    public class TestEnemy: Enemy
     {
         public override int X { get; set; }
         public override int Y { get; set; }

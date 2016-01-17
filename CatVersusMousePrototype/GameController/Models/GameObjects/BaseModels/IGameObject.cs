@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace GameController.Models.GameObjects.Interfaces
+namespace GameController.Models.GameObjects.BaseModels
 {
     public interface IGameObject :INotifyPropertyChanged
     {

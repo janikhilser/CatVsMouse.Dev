@@ -2,6 +2,7 @@
 using System.Timers;
 using System.Windows.Media;
 using GameController.Models.GameObjects;
+using GameController.Models.GameObjects.BaseModels;
 using GameController.Models.GameObjects.Implementations;
 using GameController.Models.GameObjects.Interfaces;
 
@@ -15,9 +16,9 @@ namespace GameController.Models
 
         public IField[,] Fields { get; set; }
 
-        public IMouse Mouse { get; set; }
+        public Mouse Mouse { get; set; }
 
-        public ITestEnemy TestEnemy { get; set; }
+        public Enemy TestEnemy { get; set; }
 
         public void Initialize(GameModelInitModel initModel)
         {

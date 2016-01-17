@@ -1,4 +1,5 @@
 using System.Windows.Media;
+using GameController.Models.GameObjects.BaseModels;
 using GameController.Models.GameObjects.Interfaces;
 
 namespace GameController.Models.GameObjects.Implementations

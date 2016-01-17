@@ -1,10 +1,11 @@
 using System.Timers;
 using System.Windows.Media;
 using GameController.Models.GameObjects.Implementations;
+using GameController.Models.GameObjects.Interfaces;
 
-namespace GameController.Models.GameObjects.Interfaces
+namespace GameController.Models.GameObjects.BaseModels
 {
-    public abstract class MoveableGameObject : GameObject,IMoveableGameObject
+    public abstract class MoveableGameObject : GameObject, IMoveableGameObject
     {
         public abstract ObjectTypeEnum ObjectType { get; set; }
         public IGameModel GameModel { get; set; }
