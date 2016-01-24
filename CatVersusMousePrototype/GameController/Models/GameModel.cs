@@ -52,7 +52,7 @@ namespace GameController.Models
             }
 
             Mouse = new Mouse(this);
-            TestEnemy = new TestEnemy(this,y:2);
+            TestEnemy = new TestEnemy(this,y:28, x:28);
             Timer moveMouseTimer = new Timer(300);
             //moveMouseTimer.Elapsed += initModel.OnMoveMouse;
             moveMouseTimer.Elapsed += Mouse.Move;

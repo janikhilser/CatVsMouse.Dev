@@ -13,7 +13,7 @@
             </Grid.ColumnDefinitions>
             <StackPanel Background="Purple">
                 <Button Command="{Binding BackToMainMenuCommand}" Content="Back" Margin="10"></Button>
-                <Button></Button>
+                <!--<Button></Button>-->
             </StackPanel>
             <Viewbox Grid.Column="1">
                 <Grid Height="{Binding GameModel.FieldHeight}" Width="{Binding GameModel.FieldWidth}" Background="Yellow">

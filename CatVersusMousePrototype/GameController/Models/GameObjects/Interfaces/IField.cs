@@ -1,9 +1,10 @@
 ﻿using System.Windows.Media;
+using GameController.Models.GameObjects.BaseModels;
 
 namespace GameController.Models.GameObjects.Interfaces
 {
 
-    public interface IField
+    public interface IField : IGameObject
     {
         FieldType FieldType { get; set; }
         int Height { get; set; }

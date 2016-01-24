@@ -3,7 +3,7 @@ using GameController.Models.GameObjects.Interfaces;
 
 namespace GameController.Models.GameObjects.BaseModels
 {
-    public interface IMoveableGameObject
+    public interface IMoveableGameObject : IGameObject
     {
         ObjectTypeEnum ObjectType { get; set; }
 

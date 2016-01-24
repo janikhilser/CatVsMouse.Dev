@@ -9,7 +9,7 @@ namespace GameController.Models.GameObjects.BaseModels
     {
         public abstract ObjectTypeEnum ObjectType { get; set; }
         public IGameModel GameModel { get; set; }
-        public Direction Direction { get; set; }
+        public virtual Direction Direction { get; set; }
 
         protected MoveableGameObject(IGameModel gameModel, Direction direction)
         {

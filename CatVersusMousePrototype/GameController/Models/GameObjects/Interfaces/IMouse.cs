@@ -3,7 +3,7 @@ using GameController.Models.GameObjects.BaseModels;
 
 namespace GameController.Models.GameObjects.Interfaces
 {
-    public interface IMouse
+    public interface IMouse : IMoveableGameObject
     {
         Brush Color { get; set; }
     }

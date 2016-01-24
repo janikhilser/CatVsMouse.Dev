@@ -2,8 +2,8 @@
 
 namespace GameController.Models.GameObjects.BaseModels
 {
-    public interface IEnemy
+    public interface IEnemy : IMoveableGameObject
     {
-        Direction GetDirection();
+        new Direction Direction { get; }
     }
 }
